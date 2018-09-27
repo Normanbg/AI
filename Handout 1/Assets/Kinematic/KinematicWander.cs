@@ -21,6 +21,14 @@ public class KinematicWander : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		// TODO 9: Generate a velocity vector in a random rotation (use RandomBinominal) and some attenuation factor
-	}
+        // TODO 9: Generate a velocity vector in a random rotation (use RandomBinominal) and some attenuation factor
+        float x = RandomBinominal();
+        float z = RandomBinominal();
+        //move.mov_velocity = (RandomBinominal(), RandomBinominal());
+        move.mov_velocity.x = x;
+        move.mov_velocity.z = z;
+
+        move.mov_velocity = move.mov_velocity.normalized * move.max_mov_velocity;
+    }
+
 }

@@ -13,8 +13,10 @@ public class KinematicSeek : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		// TODO 5: Set movement velocity to max speed in the direction of the target
-
+        // TODO 5: Set movement velocity to max speed in the direction of the target
         // Remember to enable this component in the inspector
-	}
+        Vector3 vecResult = (move.target.transform.position - transform.position); 
+        move.mov_velocity = vecResult.normalized * move.max_mov_velocity;
+
+    }
 }
